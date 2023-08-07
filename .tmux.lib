@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$1" = "next_pane" ]; then
+	current_pane=$(tmux display-message -p "#P")
+	panes=$(tmux list-panes -F "#P")
+	next_pane=$(echo "$panes" | awk -v current=$current_pane 'NR==1 {first=$1} $1 > current {print $1; exit} END {if (!found) print first}' | head -n 1)
+	tmux select-pane -t $next_pane
+fi
