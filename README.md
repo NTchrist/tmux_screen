@@ -4,5 +4,5 @@ Tmux conf that emulates basic hotkeys of screen and other simple qol modificatio
 install with:
 
 ```
-wget https://raw.githubusercontent.com/NTchrist/tmux_screen/main/.tmux.conf -O -> ~/.tmux.conf
+wget https://raw.githubusercontent.com/NTchrist/tmux_screen/main/.tmux.conf -O -> ~/.tmux.conf;wget https://raw.githubusercontent.com/NTchrist/tmux_screen/main/.tmux.lib -O -> ~/.tmux.lib;chmod +x ~/.tmux.lib
 ```
