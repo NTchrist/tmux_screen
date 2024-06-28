@@ -58,10 +58,10 @@ fi
 
 if [ "$1" = "print_cpu" ]; then
 	z_tmux_cpu=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
-	echo "${z_tmux_cpu}%"
+	printf "%05.1f%%" "${z_tmux_cpu}"
 fi
 
 if [ "$1" = "print_mem" ]; then
 	z_tmux_mem=$(free | grep Mem | awk '{printf "%.2f%", $3/$2 * 100.0}')
-	echo "${z_tmux_mem}"
+	printf "%05.1f%" "${z_tmux_mem}"
 fi
