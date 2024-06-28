@@ -47,8 +47,8 @@ if [ "$1" = "print_mounts" ]; then
         else if (unit == "M") mult = 1024 * 1024;
         else if (unit == "K") mult = 1024;
         size_bytes = num * mult;
-        printf "%16.0f [%s] %s %s\n", size_bytes, $6, $5, $2;
-    }' | sort -nr | head -3 | awk '{ printf "%s %s %s ", $2, $3, $4 } END { print "" }'
+        printf "%16.0f %s %s %s\n", size_bytes, $6, $5, $2;
+    }' | sort -nr | head -3 | awk '{ printf "[%s %s %s] ", $2, $3, $4 } END { print "" }'
 fi
 
 if [ "$1" = "print_load" ]; then
